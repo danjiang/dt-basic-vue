@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>alertBox demo</title>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="./dist/alertBox.umd.js"></script>
+<script src="./dist/blogPost.umd.js"></script>
+<script src="./dist/buttonCounter.umd.js"></script>
+<link rel="stylesheet" href="./dist/alertBox.css">
+<link rel="stylesheet" href="./dist/blogPost.css">
+<div id="app">
+  <alert-box>Something bad happened.</alert-box>
+  <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+  <button-counter></button-counter>
+</div>
+<script>
+  Vue.createApp({
+    components: {
+      AlertBox: alertBox,
+      BlogPost: blogPost,
+      ButtonCounter: buttonCounter
+    },
+    data: function () {
+      return {
+        posts: [
+          { id: 1, title: 'My journey with Vue' },
+          { id: 2, title: 'Blogging with Vue' },
+          { id: 3, title: 'Why Vue is so fun' }
+        ]
+      }
+    }
+  }).mount('#app')
+</script>

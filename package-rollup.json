@@ -1,0 +1,28 @@
+{
+  "name": "dt-basic-vue",
+  "version": "1.0.1",
+  "description": "Some basic vue components",
+  "keywords": [],
+  "author": "Dan Jiang",
+  "license": "ISC",
+  "main": "dist/dt-basic-vue.umd.js",
+  "module": "dist/dt-basic-vue.esm.js",
+  "unpkg": "dist/dt-basic-vue.min.js",
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/dt-basic-vue.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/dt-basic-vue.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/dt-basic-vue.min.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "rollup": "^1.17.0",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
