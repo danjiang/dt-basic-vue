@@ -1,13 +1,20 @@
 <template>
     <div class="blog-post">
-        <img src="./assets/logo.png" alt="DanThought Logo">
+        <img :src="logo" alt="DanThought Logo">
         <h3>{{ title }}</h3>
     </div>
 </template>
 <script>
+import logo from './assets/logo.png';
+
 export default {
     props: {
         title: String
+    },
+    data() {
+        return {
+            logo
+        };
     }
 }
 </script>
